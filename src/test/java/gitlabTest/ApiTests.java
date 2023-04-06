@@ -1,12 +1,12 @@
-package gitlabTests;
+package gitlabTest;
 
+import io.qameta.allure.testng.Tag;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -17,7 +17,7 @@ import static org.hamcrest.Matchers.equalTo;
 @Tag("API")
 public class ApiTests {
 
-    @BeforeAll
+    @BeforeSuite
     public static void setBaseUrl(){
         RestAssured.baseURI = "https://api.spacexdata.com/v4";
     }
@@ -34,7 +34,7 @@ public class ApiTests {
         LinkedHashMap<String, String> links = given().get("/company")
                 .then().log().body()
                 .extract().body().jsonPath().get("links");
-        Assertions.assertEquals(4, links.size());
+        Assert.assertEquals(4, links.size());
     }
 
     @Test
@@ -42,7 +42,7 @@ public class ApiTests {
         ArrayList members = given().get("/crew")
                 .then().log().body()
                 .extract().body().as(ArrayList.class);
-        Assertions.assertTrue(members.size() == 30);
+        Assert.assertTrue(members.size() == 30);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class ApiTests {
 
         String name = jsonPath.getString("name");
 
-        Assertions.assertEquals("Robert Behnken", name);
+        Assert.assertEquals("Robert Behnken", name);
     }
 
     @Test
@@ -77,7 +77,7 @@ public class ApiTests {
                 .then().log().body()
                 .extract().as(MemberPojo.class);
 
-        Assertions.assertTrue(lastMember.getLaunches().size()==0);
+        Assert.assertTrue(lastMember.getLaunches().size()==0);
     }
 
 }

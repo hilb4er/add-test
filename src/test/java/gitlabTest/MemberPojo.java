@@ -1,4 +1,4 @@
-package gitlabTests;
+package gitlabTest;
 
 import java.util.ArrayList;
 

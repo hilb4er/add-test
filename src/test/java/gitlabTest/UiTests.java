@@ -1,31 +1,34 @@
-package gitlabTests;
+package gitlabTest;
 
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import org.junit.jupiter.api.*;
+import io.qameta.allure.testng.Tag;
 import org.openqa.selenium.Keys;
-
+import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$x;
 
 @Tag("UI")
 public class UiTests {
 
-    @BeforeAll
-    public static void setUp(){
+    @BeforeSuite
+    public static void setUp() {
         Configuration.headless = true;
     }
 
-    @BeforeEach
-    public void openPage(){
+    @BeforeTest
+    public void openPage() {
         Selenide.open("https://www.google.com/");
     }
 
-    private void assertAnswer(String value){
+    private void assertAnswer(String value) {
         $x("//input[@name='q']").sendKeys(value + "=" + Keys.ENTER);
         String answer = $x("//span[@id='cwos']").getText();
-        Assertions.assertEquals("4", answer);
+        Assert.assertEquals("4", answer);
     }
 
     @Test
@@ -46,7 +49,7 @@ public class UiTests {
 
     @Test
     public void calcMultipyTest() {
-       assertAnswer("2*2");
+        assertAnswer("2*2");
     }
 
     @Test
