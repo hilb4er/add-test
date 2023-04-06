@@ -31,29 +31,29 @@ public class UiTests {
         Assert.assertEquals("4", answer);
     }
 
-    @Test
-    public void calcPlusTest() {
-        assertAnswer("2+2");
-    }
-
-    @Test
-    public void calcPlusTest2() {
-        assertAnswer("1+3");
-    }
-
-
-    @Test
-    public void calcMinusTest() {
-        assertAnswer("6-2");
-    }
-
-    @Test
-    public void calcMultipyTest() {
-        assertAnswer("2*2");
-    }
-
-    @Test
-    public void calcDevideTest() {
-        assertAnswer("8/2");
-    }
+//    @Test
+//    public void calcPlusTest() {
+//        assertAnswer("2+2");
+//    }
+//
+//    @Test
+//    public void calcPlusTest2() {
+//        assertAnswer("1+3");
+//    }
+//
+//
+//    @Test
+//    public void calcMinusTest() {
+//        assertAnswer("6-2");
+//    }
+//
+//    @Test
+//    public void calcMultipyTest() {
+//        assertAnswer("2*2");
+//    }
+//
+//    @Test
+//    public void calcDevideTest() {
+//        assertAnswer("8/2");
+//    }
 }

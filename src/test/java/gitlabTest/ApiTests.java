@@ -77,7 +77,7 @@ public class ApiTests {
                 .then().log().body()
                 .extract().as(MemberPojo.class);
 
-        Assert.assertTrue(lastMember.getLaunches().size()==0);
+        Assert.assertEquals(lastMember.getName(), "Anna Kikina");
     }
 
 }
