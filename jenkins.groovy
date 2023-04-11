@@ -7,9 +7,19 @@ pipeline {
 
         stages {
             stage ("Build") {
+                when {
+                    branch 'master'
+                }
                 steps
                         {
-                          sh './gradlew clean apiTests'
+                    //      sh './gradlew clean apiTests'
+                            try
+                            {
+                                labledShel(label: "Run API", script: "./gradlew -x test API")
+                            }finally
+                            {
+                                echo "гавно всё"
+                            }
                         }
             }
         }
