@@ -9,7 +9,7 @@ pipeline {
             stage ("Build") {
                 steps
                         {
-                          sh './gradlew clean apiTest'
+                          sh './gradlew clean uiTests'
                         }
             }
         }
