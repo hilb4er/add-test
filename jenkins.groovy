@@ -12,14 +12,14 @@ pipeline {
                 }
                 steps
                         {
-                    //      sh './gradlew clean apiTests'
-                            try
-                            {
-                                lablledShell(label: "Run API", script: "./gradlew -x test API")
-                            }finally
-                            {
-                                echo "гавно всё"
-                            }
+                          sh './gradlew clean apiTests'
+//                            try
+//                            {
+//                                lablledShell(label: "Run API", script: "./gradlew -x test API")
+//                            }finally
+//                            {
+//                                echo "гавно всё"
+//                            }
                         }
             }
         }

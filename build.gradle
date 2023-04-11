@@ -27,9 +27,12 @@ dependencies {
 }
 
 def apiTests = tasks.register("apiTests", Test) {
-    useJUnitPlatform() {
-        includeTags "API"
+    useTestNG() {
+        include("API")
     }
+//    useJUnitPlatform() {
+//        includeTags "API"
+//    }
 }
 
 //def uiTest = tasks.register("uiTests", Test) {
@@ -38,11 +41,11 @@ def apiTests = tasks.register("apiTests", Test) {
 //    }
 //}
 
-tasks.register('apiTest', Test).configure {
-
-        include("ApiTests")
-
-}
+//tasks.register('apiTest', Test).configure {
+//
+//        include("ApiTests")
+//
+//}
 //tasks.register('uiTests', Test).configure {
 //
 //    include("UiTests")
