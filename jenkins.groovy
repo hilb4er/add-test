@@ -4,18 +4,18 @@ pipeline {
     tools {
 
         gradle "8.1"
-
+    }
 
         stages {
             stage ("Build") {
-                step
+                steps
                         {
                           sh './gradlew clean build'
                         }
             }
 
         }
-    }
+
 
 
 }
