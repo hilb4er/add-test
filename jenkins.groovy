@@ -7,9 +7,9 @@ pipeline {
 
         stages {
             stage ("Build") {
-                when {
-                    branch 'master'
-                }
+//                when {
+//                    branch 'master'
+//                }
                 steps
                         {
                           sh './gradlew clean apiTests'
