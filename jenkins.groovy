@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     tools {
-
         gradle "8.1"
     }
 
@@ -10,12 +9,8 @@ pipeline {
             stage ("Build") {
                 steps
                         {
-                          sh './gradlew clean apiTest'
+                          sh './gradlew clean test'
                         }
             }
-
         }
-
-
-
 }
