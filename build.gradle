@@ -38,6 +38,12 @@ def uiTest = tasks.register("uiTests", Test) {
     }
 }
 
+tasks.register('apiTest', Test).configure {
+    filter {
+        includeTestsMatching("ApiTests")
+    }
+}
+
 test {
     useTestNG()
 }
