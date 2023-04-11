@@ -26,7 +26,7 @@ dependencies {
     implementation 'io.qameta.allure:allure-selenide:2.12.1'
 }
 
-def apiTest = tasks.register("apiTests", Test) {
+def apiTests = tasks.register("apiTests", Test) {
     useJUnitPlatform() {
         includeTags "API"
     }
@@ -38,11 +38,11 @@ def apiTest = tasks.register("apiTests", Test) {
 //    }
 //}
 
-//tasks.register('apiTest', Test).configure {
-//
-//        include("ApiTests")
-//
-//}
+tasks.register('apiTest', Test).configure {
+
+        include("ApiTests")
+
+}
 //tasks.register('uiTests', Test).configure {
 //
 //    include("UiTests")
