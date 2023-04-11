@@ -13,4 +13,14 @@ pipeline {
                         }
             }
         }
+    post {
+
+        always {
+        allure ([
+                reportBuildPolicy: 'ALWAYS',
+                results: [[allure-results]]
+        ])
+
+        }
+    }
 }
