@@ -29,7 +29,7 @@ public class ApiTests {
                 .body("ceo", equalTo("Elon Musk"));
     }
 
-    @Test
+    @Test(groups = "ap")
     public void checkLinksIsFour(){
         LinkedHashMap<String, String> links = given().get("/company")
                 .then().log().body()
@@ -37,7 +37,7 @@ public class ApiTests {
         Assert.assertEquals(4, links.size());
     }
 
-    @Test
+    @Test(groups = "ap")
     public void crewMembersIs30(){
         ArrayList members = given().get("/crew")
                 .then().log().body()
@@ -45,7 +45,7 @@ public class ApiTests {
         Assert.assertTrue(members.size() == 30);
     }
 
-    @Test
+    @Test(groups = "ap")
     public void firstMemberIsRobert(){
         ArrayList members = given().get("/crew")
                 .then()
@@ -65,7 +65,7 @@ public class ApiTests {
         Assert.assertEquals("Robert Behnken", name);
     }
 
-    @Test
+    @Test(groups = "ap")
     public void lastMemberHasNoLaunches(){
         List<MemberPojo> members = given().get("/crew")
                 .then()
