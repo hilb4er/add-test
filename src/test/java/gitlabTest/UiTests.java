@@ -25,10 +25,7 @@ public class UiTests {
     @BeforeSuite
     public static void setUp() {
            Configuration.headless = true;
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        ChromeDriver driver = new ChromeDriver(options);
-        driver.get("https://www.google.com/");
+      Selenide.open("https://www.google.com/");
         System.setProperty("webdriver.http.factory", "jdk-http-client");
 //        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 
