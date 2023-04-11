@@ -27,9 +27,9 @@ dependencies {
 }
 
 def apiTests = tasks.register("apiTests", Test) {
-    useTestNG()
-     include 'gitlabTest.ApiTests'
-
+    useTestNG() {
+        includeGroups  "ap"
+    }
 
 //    useJUnitPlatform() {
 //        includeTags "API"

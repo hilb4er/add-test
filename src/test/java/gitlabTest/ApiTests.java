@@ -22,7 +22,7 @@ public class ApiTests {
         RestAssured.baseURI = "https://api.spacexdata.com/v4";
     }
 
-    @Test
+    @Test(groups = "ap")
     public void checkCeoIsElonMusk(){
         given().get("/company")
                 .then().log().body()
