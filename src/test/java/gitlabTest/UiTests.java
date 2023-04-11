@@ -25,7 +25,6 @@ public class UiTests {
     @BeforeSuite
     public static void setUp() {
            Configuration.headless = true;
-      Selenide.open("https://www.google.com/");
         System.setProperty("webdriver.http.factory", "jdk-http-client");
 //        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 
@@ -41,7 +40,7 @@ public class UiTests {
     public void openPage() {
 
         //  driver.get("https://www.ya.ru/");
-       //     Selenide.open("https://www.google.com/");
+            Selenide.open("https://www.google.com/");
 
     }
 
