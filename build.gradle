@@ -28,7 +28,9 @@ dependencies {
 
 def apiTests = tasks.register("apiTests", Test) {
     useTestNG() {
-        includeGroups  "ap"
+       include("api*")
+
+
     }
 
 //    useJUnitPlatform() {
