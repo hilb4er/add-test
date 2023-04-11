@@ -3,7 +3,6 @@ pipeline {
 
     tools {
 
-        jdk "1.11"
         gradle "8.1"
 
 
