@@ -4,10 +4,10 @@ node {
         stage("Run tests") {
             parallel(
                     'Api Tests': {
-                        runTestWithTag("ApiTests")
+                        runTestWithTag("apiTests")
                     },
                     'Ui Tests': {
-                        runTestWithTag("UiTests")
+                        runTestWithTag("uiTests")
                     }
             )
         }
@@ -18,22 +18,9 @@ node {
     }
 }
 
-
-
-def getTestStages(testTags) {
-    def stages = [:]
-    testTags.each { tag ->
-        stages["${tag}"] = {
-            runTestWithTag(tag)
-        }
-    }
-    return stages
-}
-
-
 def runTestWithTag(String tag) {
     try {
-        labelledShell(label: "Run ${tag}", script: "chmod ++x gradlew \n./gradlew -x test ${tag}")
+        labelledShell(label: "Run ${tag}", script: "chmod +x gradlew \n./gradlew -x test ${tag}")
     } finally {
         echo "some failed tests"
     }
