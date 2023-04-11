@@ -1,22 +1,35 @@
 node {
 
+//    try {
+//        stage("Run tests") {
+//            parallel(
+//                    'Api Tests': {
+//                        runTestWithTag("apiTests")
+//                    },
+//                    'Ui Tests': {
+//                        runTestWithTag("uiTests")
+//                    }
+//            )
+//        }
     try {
-        stage("Run tests") {
-            parallel(
-                    'Api Tests': {
-                        runTestWithTag("apiTests")
-                    },
-                    'Ui Tests': {
-                        runTestWithTag("uiTests")
-                    }
-            )
-        }
+        parallel getTestStages(["apiTests", "uiTests"])
     } finally {
         stage("Allure") {
             generateAllure()
         }
     }
 }
+
+def getTestStages(testTags) {
+    def stages = [:]
+    testTags.each { tag ->
+        stages["${tag}"] = {
+            runTestWithTag(tag)
+        }
+    }
+    return stages
+}
+
 
 def runTestWithTag(String tag) {
     try {
