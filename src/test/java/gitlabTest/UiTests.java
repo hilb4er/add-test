@@ -24,7 +24,7 @@ public class UiTests {
 
     @BeforeSuite
     public static void setUp() {
-           Configuration.headless = true;
+           Configuration.headless = false;
         System.setProperty("webdriver.http.factory", "jdk-http-client");
 //        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 
