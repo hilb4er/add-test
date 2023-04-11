@@ -38,16 +38,16 @@ def apiTest = tasks.register("apiTests", Test) {
 //    }
 //}
 
-tasks.register('apiTest', Test).configure {
-
-        include("ApiTests")
-
-}
-tasks.register('uiTests', Test).configure {
-
-    include("UiTests")
-
-}
+//tasks.register('apiTest', Test).configure {
+//
+//        include("ApiTests")
+//
+//}
+//tasks.register('uiTests', Test).configure {
+//
+//    include("UiTests")
+//
+//}
 
 test {
     useTestNG()
