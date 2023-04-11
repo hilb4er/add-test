@@ -15,7 +15,7 @@ pipeline {
                     //      sh './gradlew clean apiTests'
                             try
                             {
-                                labledShel(label: "Run API", script: "./gradlew -x test API")
+                                lablledShell(label: "Run API", script: "./gradlew -x test API")
                             }finally
                             {
                                 echo "гавно всё"
